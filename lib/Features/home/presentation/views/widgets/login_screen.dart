@@ -2,12 +2,11 @@ import 'package:bloc_v2/Features/emp_features/presentation/add_emp.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../../../../emp_features/presentation/add_emp.dart';
+import '../../../../emp_features/presentation/all_emp_screen.dart';
 class LoginScreen extends StatelessWidget {
   var formKey = GlobalKey<FormState>();
   var mail = TextEditingController();
   var pass = TextEditingController();
-AddEmp addEmp =AddEmp();
-
 
   passLoginData() async{
     var res =await http.post("https:4000/admin/auth/login" as Uri,
@@ -64,10 +63,10 @@ AddEmp addEmp =AddEmp();
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => AddEmp()), // Corrected the builder
+                          MaterialPageRoute(builder: (context) => AllEmployeeScreen()), // Corrected the builder
                         );
                         if (formKey.currentState?.validate() ?? false) {
- // Form is valid, proceed with login action
+      // Form is valid, proceed with login action
                           passLoginData();
                         }
                       },
