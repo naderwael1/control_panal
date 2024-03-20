@@ -34,7 +34,7 @@ class _SplashViewbodyState extends State<SplashViewbody>
 //////////////////////////////////////////////////////////////////////////////////////
   void initAnimated() {
     animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
     slidingAnimation =
         Tween<Offset>(begin: const Offset(0, 2), end: const Offset(0, 0))
             .animate(animationController);
@@ -54,7 +54,20 @@ class _SplashViewbodyState extends State<SplashViewbody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(AssetsData.logo),
+        Center(
+          child: SizedBox(
+            height: 130, // Set desired height
+            width: 290, // Set desired width
+            child: Image.network(
+              'https://mir-s3-cdn-cf.behance.net/project_modules/fs/1e8feb109720503.5fda2a433c12d.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 4,
+        ),
+
         const SizedBox(
           height: 4,
         ),

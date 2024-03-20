@@ -13,6 +13,9 @@ class UpdateEmployeeScreen extends StatefulWidget {
 }
 
 class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
+
+
+
   String? email;
   String? password;
   String? confirmPassword;
@@ -24,6 +27,20 @@ class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
   @override
   Widget build(BuildContext context) {
     final employee = Get.arguments;
+
+
+    if (employee != null) {
+      print('ID: ${employee.id}');
+      print('Title: ${employee.title}');
+      print('Price: ${employee.price}');
+      print('Description: ${employee.description}');
+      print('Category: ${employee.category}');
+      print('Image: ${employee.image}');
+    } else {
+      print('No employee data received.');
+    }
+
+
     return ModalProgressHUD(
       // Corrected the widget name
       inAsyncCall: isLoading, // Set the loading state
@@ -91,12 +108,12 @@ class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
                   });
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextFormField(
                 decoration: InputDecoration(
                   labelText: 'State',
                   border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.location_on),
+                  prefixIcon: Icon(Icons.event_available),
                 ),
                 onChanged: (value) {
                   setState(() {
@@ -135,6 +152,12 @@ class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
                         description: position== null ? employee.title:position!,
                         category: state== null ? employee.title:state!,
                         image: imageUrl== null ? employee.title:imageUrl!);
+                    print('NEmail: $email');
+                    print('NPassword: $password');
+                    print('NConfirm Password: $confirmPassword');
+                    print('NPosition: $position');
+                    print('NState: $state');
+                    print('NImage URL: $imageUrl');
                   } on Exception catch (e) {
                     print(e.toString());
                   }

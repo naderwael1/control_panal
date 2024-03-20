@@ -37,7 +37,7 @@ class ApiHelper {
       Map<String, dynamic>data = jsonDecode(response.body);
       return data;
     }else{
-      throw Exception("error");
+      throw Exception( 'we found a problem when try to conect server ${response.statusCode}');
     }
   }
 
@@ -59,7 +59,8 @@ class ApiHelper {
       print(data);
       return data;
     }else{
-      throw Exception('error is ');
+      throw
+      Exception( 'we found a problem when try to conect server ${response.statusCode}');
     }
   }
 

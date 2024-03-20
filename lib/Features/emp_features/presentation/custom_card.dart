@@ -39,7 +39,9 @@ class CustomCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                       Text(employee.title.substring(0,5)),
+                      // Text(employee.title.substring(0,5)),
+                      Text('${employee.price.toStringAsFixed(2)}'),//ؤقمين يس
+                      //Text(employee.price.toString()),
                       IconButton(
                         onPressed: () {
                           Get.to(() => UpdateEmployeeScreen(),arguments: employee); // Corrected the builder

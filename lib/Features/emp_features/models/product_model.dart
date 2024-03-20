@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class EmployeeModel {
   final int id;
   final String title;
- // final int price;
+  final double price;
   final String description;
   final String category;
   final String image;
@@ -11,23 +11,24 @@ class EmployeeModel {
   EmployeeModel({
     required this.id,
     required this.title,
-   // required this.price,
+    required this.price,
     required this.image,
     required this.description,
     required this.category,
   });
 
   // Factory constructor to create an EmployeeModel from a JSON object
-  factory EmployeeModel.fromJson(jsonData) {
+  factory EmployeeModel.fromJson(Map<String, dynamic> jsonData) {
     return EmployeeModel(
-      id: jsonData['id'] ,
-      title: jsonData['title'] ,
-      //price: jsonData['price'] ,
-      image: jsonData['image'] ,
-      description: jsonData['description'],
-      category: jsonData['category'] ,
+      id: jsonData['id'] ?? 0, // Example default value if 'id' is missing
+      title: jsonData['title'] ?? '', // Example default value if 'title' is missing
+      price: jsonData['price'] != null ? double.parse(jsonData['price'].toString()) : 0.0, // Parse 'price' to double
+      image: jsonData['image'] ?? '', // Example default value if 'image' is missing
+      description: jsonData['description'] ?? '', // Example default value if 'description' is missing
+      category: jsonData['category'] ?? '', // Example default value if 'category' is missing
     );
   }
+
 
 // You can add other factory constructors or methods as needed
 }
