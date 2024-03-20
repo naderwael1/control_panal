@@ -80,7 +80,7 @@ class AnimateText extends StatelessWidget {
           return SlideTransition(
             position: slidingAnimation,
             child: const Text(
-              "Read the free book ",
+              "King of FooD ",
               textAlign: TextAlign.center,
             ),
           );

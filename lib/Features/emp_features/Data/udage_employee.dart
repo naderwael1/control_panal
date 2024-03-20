@@ -9,9 +9,13 @@ class UpdateEmployee {
        // required String price,
         required String description,
         required String category,
-        required String image}) async {
+        required String image,
+      required int id,
+      }) async {
+    print('emp id = $id');
+
     Map<String, dynamic> data =
-    await ApiHelper().post(url: 'https://fakestoreapi.com/products', body: {
+    await ApiHelper().put(url: 'https://fakestoreapi.com/products/:idhttps://fakestoreapi.com/products/$id', body: {
       'title': title,
       //'price': price,
       'description': description,

@@ -130,10 +130,11 @@ class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
                   print('Image URL: $imageUrl');
                   try {
                     UpdateEmployee().updateEmployee(
-                        title: email!,
-                        description: position!,
-                        category: state!,
-                        image: imageUrl!);
+                      id: employee.id,
+                        title: email == null ? employee.title:email!,
+                        description: position== null ? employee.title:position!,
+                        category: state== null ? employee.title:state!,
+                        image: imageUrl== null ? employee.title:imageUrl!);
                   } on Exception catch (e) {
                     print(e.toString());
                   }
