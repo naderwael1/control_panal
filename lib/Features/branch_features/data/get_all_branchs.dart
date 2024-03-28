@@ -6,7 +6,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '';
-import 'models/branch_model.dart';
+import '../models/branch_model.dart';
 import '../../../core/utils/helper/api_helper.dart';
 
 class GetAllBranches {

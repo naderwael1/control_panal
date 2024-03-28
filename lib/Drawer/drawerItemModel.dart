@@ -1,9 +1,13 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class DrawerItemModel{
+class DrawerItemModel {
   final String title;
   final IconData icon;
+  final Widget destination; // Destination screen type
 
-  const DrawerItemModel({required this.title, required this.icon});
-
+  const DrawerItemModel({
+    required this.title,
+    required this.icon,
+    required this.destination,
+  });
 }
