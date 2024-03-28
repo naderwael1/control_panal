@@ -83,7 +83,7 @@ class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
               ),
               SizedBox(height: 20),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Confirm Password',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.lock),
@@ -97,7 +97,7 @@ class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
               ),
               SizedBox(height: 20),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Position',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.work),
@@ -110,7 +110,7 @@ class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
               ),
               const SizedBox(height: 20),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'State',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.event_available),
@@ -123,7 +123,7 @@ class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
               ),
               SizedBox(height: 20),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Image URL',
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.image),
@@ -134,7 +134,7 @@ class _UpdateEmployeeScreenState extends State<UpdateEmployeeScreen> {
                   });
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   isLoading = true;

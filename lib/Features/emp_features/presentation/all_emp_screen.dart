@@ -1,6 +1,8 @@
 import 'package:bloc_v2/Features/emp_features/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../Drawer/customDrawer.dart';
+import '../../../Drawer/drawerArt.dart';
 import '../Data/get_all_emp_list.dart';
 import 'custom_card.dart';
 
@@ -10,13 +12,16 @@ class AllEmployeeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const CustomDrawer(),
       appBar: AppBar(
         title: Text('All Employees'),
+
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {
-              // Add your action here
+
+
             },
             icon: Icon(Icons.add),
           ),
